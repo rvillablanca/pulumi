@@ -2,12 +2,15 @@ CHANGELOG
 =========
 
 ## HEAD (Unreleased)
-_(none)_
+
+- Add an import command to the Pulumi CLI. This command can be used to import existing resources
+  into a Pulumi stack.
+  [#4765](https://github.com/pulumi/pulumi/pull/4765)
 
 ## 2.6.0 (2020-07-08)
 
 - Go program gen: Improved handling for pulumi.Map types
-  [#491](https://github.com/pulumi/pulumi/pull/4914)
+  [#4914](https://github.com/pulumi/pulumi/pull/4914)
 
 - Go SDK: Input type interfaces should declare pointer type impls where appropriate
   [#4911](https://github.com/pulumi/pulumi/pull/4911)
