@@ -18,6 +18,9 @@ CHANGELOG
 - Python: Improved error message when `virtualenv` doesn't exist
   [#5069](https://github.com/pulumi/pulumi/pull/5069)
 
+- SDK changes to support Python input/output classes
+  [#5033](https://github.com/pulumi/pulumi/pull/5033)
+
 ## 2.7.1 (2020-07-22)
 
 - Fix logic to parse pulumi venv on github action
