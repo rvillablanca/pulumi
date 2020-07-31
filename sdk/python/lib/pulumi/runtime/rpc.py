@@ -450,12 +450,14 @@ def _output_types(cls: type) -> Dict[str, type]:
             assert len(args) == 1
             val = args[0]
 
-        # If it is Optional[T], it is Union[T, None], extract the first arg T.
+        # If it is Optional[T], extract the arg T. Note that Optional[T] is really Union[T, None],
+        # and any nested Unions are flattened, so Optional[Union[T, U], None] is Union[T, U, None].
+        # We'll only "unwrap" for the common case of a single arg T for Union[T, None].
         if _is_optional_type(val):
             args = _get_args(val)
-            assert len(args) == 2
-            assert args[1] is type(None)
-            val = args[0]
+            if len(args) == 2:
+                assert args[1] is type(None)
+                val = args[0]
 
         return val
 
